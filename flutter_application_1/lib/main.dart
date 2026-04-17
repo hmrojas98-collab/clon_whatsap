@@ -21,6 +21,41 @@ class _PrincipaalState extends State<Principaal> {
           title: const Text("WhatsApp"),
           backgroundColor: Colors.green,
         ),
+        body: ListView(
+          children: [
+            Container(
+              height: 120,
+              color: Colors.black,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  historia("Heidy", Colors.red),
+                  historia("Marcela", Colors.green),
+                  historia("Rojas", Colors.blue),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  //  HISTORIAS
+  Widget historia(String nombre, Color color) {
+    return Container(
+      width: 100,
+      margin: const EdgeInsets.all(10),
+      child: Column(
+        children: [
+          CircleAvatar(
+            radius: 30,
+            backgroundColor: color,
+            child: const Icon(Icons.person, color: Colors.white),
+          ),
+          const SizedBox(height: 5),
+          Text(nombre, style: const TextStyle(color: Colors.white)),
+        ],
       ),
     );
   }
