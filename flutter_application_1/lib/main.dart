@@ -23,6 +23,7 @@ class _PrincipaalState extends State<Principaal> {
         ),
         body: ListView(
           children: [
+            // HISTORIAS DART
             Container(
               height: 120,
               color: Colors.black,
@@ -35,13 +36,18 @@ class _PrincipaalState extends State<Principaal> {
                 ],
               ),
             ),
+
+            // CHATS DART
+            chatTile("Heidy", "Hola, ¿cómo estás?", "10:30"),
+            chatTile("Marcela", "Nos vemos luego", "9:15"),
+            chatTile("Rojas", "😂😂😂", "Ayer"),
           ],
         ),
       ),
     );
   }
 
-  //  HISTORIAS
+  // HISTORIAS FUNCION PARA CREAR HISTORIAS
   Widget historia(String nombre, Color color) {
     return Container(
       width: 100,
@@ -57,6 +63,20 @@ class _PrincipaalState extends State<Principaal> {
           Text(nombre, style: const TextStyle(color: Colors.white)),
         ],
       ),
+    );
+  }
+
+  // CHAT  FUNCION PARA CREAR CHAT 
+  Widget chatTile(String nombre, String mensaje, String hora) {
+    return ListTile(
+      leading: const CircleAvatar(
+        radius: 25,
+        backgroundColor: Colors.grey,
+        child: Icon(Icons.person, color: Colors.white),
+      ),
+      title: Text(nombre),
+      subtitle: Text(mensaje),
+      trailing: Text(hora),
     );
   }
 }
